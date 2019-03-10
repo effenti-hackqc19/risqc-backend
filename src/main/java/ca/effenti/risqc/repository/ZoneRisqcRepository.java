@@ -17,7 +17,7 @@ public interface ZoneRisqcRepository  extends CrudRepository<ZoneRisqc, Integer>
             "ORDER BY distance\n" +
             "LIMIT 50;", nativeQuery = true)
     List<ZoneRisqc> findClosestZones(
-            @Param("latitude") Double latitude,
-            @Param("longitude") Double longitude
+            @Param("longitude") Double longitude,
+            @Param("latitude") Double latitude
     );
 }

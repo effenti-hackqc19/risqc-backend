@@ -22,7 +22,24 @@ public class FountainBorn {
     private String ville;
     private String arrondissement;
     private String nomTopo;
-    private Double distance;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Float getDistance() {
+        return distance;
+    }
+
+    public void setDistance(Float distance) {
+        this.distance = distance;
+    }
+
+    private Float distance;
 
 
     public FountainBorn() {

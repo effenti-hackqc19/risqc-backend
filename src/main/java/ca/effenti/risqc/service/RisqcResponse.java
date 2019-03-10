@@ -18,6 +18,8 @@ public class RisqcResponse {
 
     private List<FountainBorn> borns = new ArrayList<>();
 
+    private Float riskScore = 0F;
+
     public List<ZoneRisqc> getZones() {
         return zones;
     }
@@ -32,6 +34,14 @@ public class RisqcResponse {
 
     public void setBorns(List<FountainBorn> borns) {
         this.borns = borns;
+    }
+
+    public Float getRiskScore() {
+        return riskScore;
+    }
+
+    public void setRiskScore(Float riskScore) {
+        this.riskScore = riskScore;
     }
 
     @Override

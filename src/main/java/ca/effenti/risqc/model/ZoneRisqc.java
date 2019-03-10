@@ -17,7 +17,7 @@ public class ZoneRisqc {
     private Long id;
 
     private Geometry geometry;
-    private Double distance;
+    private Float distance;
 
     public ZoneRisqc() {
     }
@@ -38,11 +38,11 @@ public class ZoneRisqc {
         this.geometry = geometry;
     }
 
-    public Double getDistance() {
+    public Float getDistance() {
         return distance;
     }
 
-    public void setDistance(Double distance) {
+    public void setDistance(Float distance) {
         this.distance = distance;
     }
 }
