@@ -14,16 +14,21 @@ public class FloodZonesRiskEvaluator implements RiskEvaluator {
     }
 
     @Override
-    public Float computeRisk() {
+    public RiskMeaning computeRisk() {
         Float closestDistance = closestZone.getDistance();
-        System.out.println("flood closest distance " + closestDistance);
         if (closestDistance == 0) {
-            return MAX_RISK * score/100;
+            Float riskValue =  MAX_RISK * score/100;
+            String message = "Vous êtes dans une zone à risque d'innondation";
+            return  new RiskMeaning(message, riskValue);
         }
         if (closestDistance >= MIN_DISTANCE_TO_CONSIDER) {
-            return MIN_RISK * score/100;
+            Float riskValue =   MIN_RISK * score/100;
+            String message = "Vous êtes nêtes pas dans une zone à risque d'innondation";
+            return  new RiskMeaning(message, riskValue);
         }
-        return score * getRiskFactor();
+        Float riskValue =  score * getRiskFactor();
+        String message = "Vous êtes à "+ closestDistance + "d'une zone à risque d'innondation";
+        return  new RiskMeaning(message, riskValue);
     }
 
     private Float getRiskFactor() {

@@ -28,15 +28,13 @@ public class RisqcService {
     private RiskEvaluatorEngine riskEvaluatorEngine;
 
     public RisqcResponse computeRisksFrom(final Double longitude, final Double latitude) {
-        RisqcResponse risk = new RisqcResponse();
         List<FountainBorn> borns = bornRepository.findClosestFountainBorns(longitude, latitude);
         List<ZoneRisqc> zones = zoneRisqcRepository.findClosestZones(longitude,latitude);
         List<Casern> caserns = casernRepository.findClosestCasern(longitude, latitude);
-        Float riskScore = riskEvaluatorEngine.computeLocationRiskScore(zones, borns, caserns);
-        risk.setBorns(borns);
-        risk.setZones(zones);
-        risk.setCaserns(caserns);
-        risk.setRiskScore(riskScore);
-        return risk;
+        RisqcResponse riskScore = riskEvaluatorEngine.computeLocationRiskScore(zones, borns, caserns);
+        riskScore.setBorns(borns);
+        riskScore.setZones(zones);
+        riskScore.setCaserns(caserns);
+        return riskScore;
     }
 }

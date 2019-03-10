@@ -8,7 +8,7 @@ public interface RiskEvaluator {
     /*
     Distances are considered in kilometer
      */
-    public Float computeRisk();
+    public RiskMeaning computeRisk();
 
 
 }

@@ -1,5 +1,6 @@
 package ca.effenti.risqc.service;
 
+import ca.effenti.risqc.core.RiskDetails;
 import ca.effenti.risqc.model.Casern;
 import ca.effenti.risqc.model.FountainBorn;
 import ca.effenti.risqc.model.ZoneRisqc;
@@ -20,6 +21,16 @@ public class RisqcResponse {
     private List<FountainBorn> borns = new ArrayList<>();
 
     private Float riskScore = 0F;
+
+    private RiskDetails riskDetails;
+
+    public RiskDetails getRiskDetails() {
+        return riskDetails;
+    }
+
+    public void setRiskDetails(RiskDetails riskDetails) {
+        this.riskDetails = riskDetails;
+    }
 
     private List<Casern> caserns= new ArrayList<>();
 
