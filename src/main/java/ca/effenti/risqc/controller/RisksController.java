@@ -31,8 +31,6 @@ public class RisksController {
     public List<ZoneRisqc> floodZones() {
 
         List<ZoneRisqc> zones = zoneRisqcRepository.findClosestZones(46.815741, -71.200443);
-        Message message = new Message();
-        message.setMessage(MESSAGE);
         return zones;
     }
 
