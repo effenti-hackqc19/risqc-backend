@@ -5,10 +5,7 @@ import ca.effenti.risqc.model.ZoneRisqc;
 import ca.effenti.risqc.repository.ZoneRisqcRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -30,9 +27,9 @@ public class RisksController {
     }
 
     @GetMapping(value = "/flood-zones",produces = {MediaType.APPLICATION_JSON_VALUE})
-    public List<ZoneRisqc> floodZones() {
+    public List<ZoneRisqc> floodZones(@RequestParam("lat") Double lat, @RequestParam("lng") Double lng) {
 
-        List<ZoneRisqc> zones = zoneRisqcRepository.findClosestZones(46.815741, -71.200443);
+        List<ZoneRisqc> zones = zoneRisqcRepository.findClosestZones(lat, lng);
         return zones;
     }
 
