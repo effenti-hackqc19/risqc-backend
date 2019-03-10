@@ -14,6 +14,7 @@ public class RisqcService {
     @Autowired
     private BornRepository bornRepository;
 
+    @Autowired
     private ZoneRisqcRepository zoneRisqcRepository;
 
     public RisqcResponse computeRisksFrom(final Double longitude, final Double latitude) {

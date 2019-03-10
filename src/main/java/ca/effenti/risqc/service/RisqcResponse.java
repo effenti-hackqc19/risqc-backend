@@ -14,13 +14,8 @@ import java.util.Objects;
 public class RisqcResponse {
     public RisqcResponse() {}
 
-
-    @JsonSerialize(using = GeometrySerializer.class)
-    @JsonDeserialize(contentUsing = GeometryDeserializer.class)
     private List<ZoneRisqc> zones = new ArrayList<>();
 
-    @JsonSerialize(using = GeometrySerializer.class)
-    @JsonDeserialize(contentUsing = GeometryDeserializer.class)
     private List<FountainBorn> borns = new ArrayList<>();
 
     public List<ZoneRisqc> getZones() {

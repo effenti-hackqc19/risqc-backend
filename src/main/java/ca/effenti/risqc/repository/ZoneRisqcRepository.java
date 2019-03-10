@@ -15,7 +15,7 @@ public interface ZoneRisqcRepository  extends CrudRepository<ZoneRisqc, Integer>
             "IFNULL(geozone, multi_geozone) as geometry\n" +
             "FROM flood_zone\n" +
             "ORDER BY distance\n" +
-            "LIMIT 100;", nativeQuery = true)
+            "LIMIT 50;", nativeQuery = true)
     List<ZoneRisqc> findClosestZones(
             @Param("latitude") Double latitude,
             @Param("longitude") Double longitude
