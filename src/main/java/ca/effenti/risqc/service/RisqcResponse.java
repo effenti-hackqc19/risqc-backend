@@ -1,5 +1,6 @@
 package ca.effenti.risqc.service;
 
+import ca.effenti.risqc.model.Casern;
 import ca.effenti.risqc.model.FountainBorn;
 import ca.effenti.risqc.model.ZoneRisqc;
 import com.bedatadriven.jackson.datatype.jts.serialization.GeometryDeserializer;
@@ -19,6 +20,8 @@ public class RisqcResponse {
     private List<FountainBorn> borns = new ArrayList<>();
 
     private Float riskScore = 0F;
+
+    private List<Casern> caserns= new ArrayList<>();
 
     public List<ZoneRisqc> getZones() {
         return zones;
@@ -44,17 +47,26 @@ public class RisqcResponse {
         this.riskScore = riskScore;
     }
 
+    public List<Casern> getCaserns() {
+        return caserns;
+    }
+
+    public void setCaserns(List<Casern> caserns) {
+        this.caserns = caserns;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof RisqcResponse)) return false;
         RisqcResponse that = (RisqcResponse) o;
         return getZones().equals(that.getZones()) &&
-                getBorns().equals(that.getBorns());
+                getBorns().equals(that.getBorns()) &&
+                getCaserns().equals(that.getCaserns());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getZones(), getBorns());
+        return Objects.hash(getZones(), getBorns(), getCaserns());
     }
 }

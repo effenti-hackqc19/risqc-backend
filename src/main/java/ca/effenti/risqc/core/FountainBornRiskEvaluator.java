@@ -18,10 +18,10 @@ public class FountainBornRiskEvaluator implements RiskEvaluator {
     public Float computeRisk() {
         Float closestDistance = closestFountainBorn.getDistance();
         if (closestDistance == 0) {
-            return MIN_RISK;
+            return MIN_RISK * score/100;
         }
         if (closestDistance >= MAX_DISTANCE_TO_CONSIDER) {
-            return MAX_RISK;
+            return MAX_RISK*score/100;
         }
         return score * getRiskFactor();
     }

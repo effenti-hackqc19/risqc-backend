@@ -18,10 +18,10 @@ public class FloodZonesRiskEvaluator implements RiskEvaluator {
         Float closestDistance = closestZone.getDistance();
         System.out.println("flood closest distance " + closestDistance);
         if (closestDistance == 0) {
-            return MAX_RISK;
+            return MAX_RISK * score/100;
         }
         if (closestDistance >= MIN_DISTANCE_TO_CONSIDER) {
-            return MIN_RISK;
+            return MIN_RISK * score/100;
         }
         return score * getRiskFactor();
     }
