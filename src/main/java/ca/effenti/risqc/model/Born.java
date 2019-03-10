@@ -1,5 +1,9 @@
 package ca.effenti.risqc.model;
 
+import com.bedatadriven.jackson.datatype.jts.serialization.GeometryDeserializer;
+import com.bedatadriven.jackson.datatype.jts.serialization.GeometrySerializer;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.springframework.data.geo.Point;
 
 import javax.persistence.GeneratedValue;
@@ -10,8 +14,10 @@ import java.util.Objects;
 public class Born {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
-    private Point point;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @JsonSerialize(using = GeometrySerializer.class)
+    @JsonDeserialize(contentUsing = GeometryDeserializer.class)
+    protected Point point;
 
 
     public Born() {

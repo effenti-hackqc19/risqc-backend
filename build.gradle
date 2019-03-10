@@ -27,6 +27,9 @@ dependencies {
     compile('org.hibernate:hibernate-spatial')
     compile("org.springframework.boot:spring-boot-starter-data-rest")
     compile("org.springframework.boot:spring-boot-starter-data-jpa")
+    // https://mvnrepository.com/artifact/com.bedatadriven/jackson-datatype-jts
+    compile group: 'com.bedatadriven', name: 'jackson-datatype-jts', version: '2.4'
+
     // Use MySQL Connector-J
     compile 'mysql:mysql-connector-java'
     testCompile("org.springframework.boot:spring-boot-starter-test")
