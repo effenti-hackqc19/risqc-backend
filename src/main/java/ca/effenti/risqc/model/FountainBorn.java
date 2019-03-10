@@ -9,6 +9,8 @@ import com.vividsolutions.jts.geom.Point;
 import javax.persistence.*;
 import java.util.Objects;
 
+import static ca.effenti.risqc.core.RiskEvaluator.SPATIAL_DISTANCE_FACTOR_METERS;
+
 @Entity
 @Table(name = "fountain_born")
 public class FountainBorn {
@@ -32,7 +34,7 @@ public class FountainBorn {
     }
 
     public Float getDistance() {
-        return distance;
+        return distance * SPATIAL_DISTANCE_FACTOR_METERS;
     }
 
     public void setDistance(Float distance) {

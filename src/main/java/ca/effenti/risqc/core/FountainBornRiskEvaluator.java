@@ -27,6 +27,6 @@ public class FountainBornRiskEvaluator implements RiskEvaluator {
     }
 
     private Float getRiskFactor() {
-        return closestFountainBorn.getDistance() / MAX_DISTANCE_TO_CONSIDER;
+        return  closestFountainBorn.getDistance() / MAX_DISTANCE_TO_CONSIDER;
     }
 }

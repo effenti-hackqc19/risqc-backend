@@ -9,6 +9,8 @@ import com.vividsolutions.jts.geom.Geometry;
 
 import javax.persistence.*;
 
+import static ca.effenti.risqc.core.RiskEvaluator.SPATIAL_DISTANCE_FACTOR_METERS;
+
 @Entity
 @Table(name = "flood_zone")
 public class ZoneRisqc {
@@ -39,7 +41,7 @@ public class ZoneRisqc {
     }
 
     public Float getDistance() {
-        return distance;
+        return distance * SPATIAL_DISTANCE_FACTOR_METERS;
     }
 
     public void setDistance(Float distance) {
