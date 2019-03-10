@@ -27,7 +27,7 @@ public class FloodZonesRiskEvaluator implements RiskEvaluator {
             return  new RiskMeaning(message, riskValue);
         }
         Float riskValue =  score * getRiskFactor();
-        String message = "Vous êtes à "+ closestDistance + "d'une zone à risque d'innondation";
+        String message = "Vous êtes à "+ closestDistance + " Km d'une zone à risque d'innondation";
         return  new RiskMeaning(message, riskValue);
     }
 

@@ -29,7 +29,7 @@ public class CasernRiskEvaluator implements RiskEvaluator {
             return  new RiskMeaning(message, riskValue);
         }
         Float riskValue =  score * getRiskFactor();
-        String message = "Vous êtes à "+ closestDistance + " d'une caserne de pompiers";
+        String message = "Vous êtes à "+ closestDistance + " Km d'une caserne de pompiers";
         return  new RiskMeaning(message, riskValue);
     }
 
