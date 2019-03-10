@@ -16,8 +16,6 @@ public class ZoneRisqc {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
 
-    @JsonSerialize(using = GeometrySerializer.class)
-    @JsonDeserialize(contentUsing = GeometryDeserializer.class)
     private Geometry geometry;
     private Double distance;
 
