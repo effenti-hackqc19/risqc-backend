@@ -3,6 +3,8 @@ package ca.effenti.risqc.controller;
 import ca.effenti.risqc.model.Message;
 import ca.effenti.risqc.model.ZoneRisqc;
 import ca.effenti.risqc.repository.ZoneRisqcRepository;
+import ca.effenti.risqc.service.RisqcResponse;
+import ca.effenti.risqc.service.RisqcService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -14,7 +16,7 @@ import java.util.List;
 @CrossOrigin(origins = "*", maxAge = 3600)
 public class RisksController {
     @Autowired
-    ZoneRisqcRepository zoneRisqcRepository;
+    private RisqcService riskService;
 
 
     private static final String MESSAGE = "Pong";
@@ -27,12 +29,9 @@ public class RisksController {
     }
 
     @GetMapping(value = "/flood-zones",produces = {MediaType.APPLICATION_JSON_VALUE})
-    public List<ZoneRisqc> floodZones(@RequestParam("lat") Double lat, @RequestParam("lng") Double lng) {
-
-        List<ZoneRisqc> zones = zoneRisqcRepository.findClosestZones(lat, lng);
-        return zones;
+    public RisqcResponse floodZones(@RequestParam("lat") Double lat, @RequestParam("lng") Double lng) {
+        RisqcResponse risk = riskService.computeRisksFrom(lng, lat);
+        return risk;
     }
-
-
 
 }
