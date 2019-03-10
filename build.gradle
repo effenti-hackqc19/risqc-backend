@@ -23,5 +23,12 @@ version = "0.1.0"
 
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
+    // https://mvnrepository.com/artifact/org.hibernate/hibernate-spatial
+    compile group: 'org.hibernate', name: 'hibernate-spatial', version: '5.4.1.Final'
+    compile("org.springframework.boot:spring-boot-starter-data-rest")
+    compile("org.springframework.boot:spring-boot-starter-data-jpa")
+    // Use MySQL Connector-J
+    compile 'mysql:mysql-connector-java'
     testCompile("org.springframework.boot:spring-boot-starter-test")
+    
 }

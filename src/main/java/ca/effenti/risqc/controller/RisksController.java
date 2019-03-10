@@ -7,16 +7,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/hello")
+@RequestMapping("/api")
 public class RisksController {
 
-    private static final String MESSAGE = "Hello, World!";
+    private static final String MESSAGE = "Pong";
 
-    @GetMapping(produces = {MediaType.APPLICATION_JSON_VALUE})
+    @GetMapping(value = "/ping",produces = {MediaType.APPLICATION_JSON_VALUE})
     public Message hello() {
         Message message = new Message();
         message.setMessage(MESSAGE);
         return message;
     }
+
+
 
 }

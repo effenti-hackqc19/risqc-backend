@@ -21,7 +21,7 @@ public class ApplicationTest {
 
     @Test
     public void shouldGetMessage() {
-        ResponseEntity<Message> response = restTemplate.getForEntity("/hello", Message.class);
+        ResponseEntity<Message> response = restTemplate.getForEntity("/api", Message.class);
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
 
         Message message = response.getBody();
