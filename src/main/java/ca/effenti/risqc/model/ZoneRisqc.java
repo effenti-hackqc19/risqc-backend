@@ -1,10 +1,6 @@
 package ca.effenti.risqc.model;
 
 
-import com.bedatadriven.jackson.datatype.jts.serialization.GeometryDeserializer;
-import com.bedatadriven.jackson.datatype.jts.serialization.GeometrySerializer;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.vividsolutions.jts.geom.Geometry;
 
 import javax.persistence.*;
@@ -18,6 +14,8 @@ public class ZoneRisqc {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
 
+    private String type;
+
     private Geometry geometry;
     private Float distance;
 
@@ -30,6 +28,14 @@ public class ZoneRisqc {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public Geometry getGeometry() {
