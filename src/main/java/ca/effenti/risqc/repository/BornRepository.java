@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface BornRepository extends CrudRepository<FountainBorn, Long> {
     @Query(value = "SELECT *, ST_Distance(ST_GeomFromText(CONCAT('POINT(', :longitude , ' ', :latitude , ')')), location) as distance " +
-            "FROM fountain_born ORDER BY distance LIMIT 50;", nativeQuery = true)
+            "FROM fountain_born ORDER BY distance LIMIT 25;", nativeQuery = true)
     public List<FountainBorn> findClosestFountainBorns (
             @Param(value = "longitude") Double longitude,
             @Param(value="latitude") Double latitude);

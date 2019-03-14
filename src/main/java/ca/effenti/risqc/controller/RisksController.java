@@ -1,15 +1,11 @@
 package ca.effenti.risqc.controller;
 
 import ca.effenti.risqc.model.Message;
-import ca.effenti.risqc.model.ZoneRisqc;
-import ca.effenti.risqc.repository.ZoneRisqcRepository;
 import ca.effenti.risqc.service.RisqcResponse;
 import ca.effenti.risqc.service.RisqcService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/api")

@@ -4,10 +4,6 @@ import ca.effenti.risqc.core.RiskDetails;
 import ca.effenti.risqc.model.Casern;
 import ca.effenti.risqc.model.FountainBorn;
 import ca.effenti.risqc.model.ZoneRisqc;
-import com.bedatadriven.jackson.datatype.jts.serialization.GeometryDeserializer;
-import com.bedatadriven.jackson.datatype.jts.serialization.GeometrySerializer;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 import java.util.ArrayList;
 import java.util.List;
