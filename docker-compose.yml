@@ -1,0 +1,11 @@
+version: '3'
+services:
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: r00t
+      MYSQL_DATABASE: risqc
+    ports:
+      - 3306:3306
+    volumes:
+      - ./db-dump:/docker-entrypoint-initdb.d

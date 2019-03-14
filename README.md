@@ -1,36 +1,10 @@
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+# RisQC Backend
 
-# Spring Boot boilerplate
- 
-Quick start for Spring Boot and Gradle.
+## Requirements
+* [Docker](https://www.docker.com/get-started) with compose
 
-[![Build Status](https://travis-ci.org/cristiangreco/spring-boot-boilerplate.svg?branch=master)](https://travis-ci.org/cristiangreco/spring-boot-boilerplate)
+## Setup
+For the time being, you will need to grab a pre-processed database and place it in the `db-dump` directory  
+The latest database dump can be grabbed [here](https://drive.google.com/file/d/1i-WBtBt1lQZejS5YClAxdPxeeun2ACNH/view?usp=sharing)
 
-## How to build
-
-Build with Gradle wrapper:
-
-```sh
-$ ./gradlew clean build
-```
-
-## How to run
-
-Run with Gradle wrapper:
-
-```sh
-$ ./gradlew bootRun
-```
-
-Or run it as an executable jar:
-
-```sh
-$ java -jar build/libs/spring-boot-boilerplate-0.1.0.jar
-```
-
-## Testing with Curl
-
-```sh
-$ curl http://localhost:8080/hello
-{"message":"Hello, World!"}
-```
+You can then start the database by running `docker-compose up -d`
